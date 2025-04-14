@@ -3,26 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi Sitio GitHub Pages</title>
-  <!-- Enlaza el CSS -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Cobertura del Bosque</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Bienvenido a mi Sitio de GitHub Pages</h1>
-  </header>
+  <div class="container">
+    <h3 style="color: rgb(76, 76, 76); margin-top:20px;">Cambio de la cobertura del bosque</h3>
+    <div class="table-responsive">
+      <table id="tabla-cobertura-table" class="table table-striped table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Temática</th>
+            <th>Objeto</th>
+            <th>Tipo</th>
+            <th style="text-align: center;">Geoservicio</th>
+            <th>Descarga</th>
+            <th>Catálogo</th>
+            <th>Metadato</th>
+            <th>Salida gráfica</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-cobertura">
+          <!-- Las filas se agregarán dinámicamente mediante script.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  <main>
-    <p>Gracias compa.</p>
-    <!-- Botón que redirige a www.ideam.gov.co -->
-    <button id="btnRedirect">Ir a www.ideam.gov.co</button>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Mi Sitio Web</p>
-  </footer>
-
-  <!-- Enlaza el JavaScript -->
+  <!-- jQuery (requerido por DataTables) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap.min.js"></script>
+  <!-- Papa Parse para leer el CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <!-- Nuestro script personalizado -->
   <script src="script.js"></script>
 </body>
 </html>

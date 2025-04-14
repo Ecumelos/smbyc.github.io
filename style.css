@@ -1,38 +1,33 @@
 /* style.css */
 
-/* Estilos globales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  header, footer {
-    background-color: #123662;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-  }
-  
-  main {
-    margin: 20px;
-    text-align: center;
-  }
-  
-  /* Estilos para el botón */
-  button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #fff;
-    border: 2px solid #123662;
-    color: #123662;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #123662;
-    color: #fff;
-  }
-  
+/* Alineación en las celdas de la tabla */
+table th, table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Estilos para los dropdowns personalizados */
+.btn-default {
+  border: 1px solid #123662 !important;
+  color: #123662 !important;
+  background-color: #fff !important;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-default:active {
+  border-color: #123662 !important;
+  color: #fff !important;
+  background-color: #123662 !important;
+}
+
+button.btn-default:hover {
+  border-color: #123662 !important;
+  color: #fff !important;
+  background-color: #123662 !important;
+}
+
+/* Margen inferior para el contenedor responsivo de la tabla */
+.table-responsive {
+  margin-bottom: 20px;
+}
