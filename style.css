@@ -41,6 +41,4 @@ button.btn-default:hover {
   font-weight: bold;
   font-size: 0.9em;
   white-space: nowrap;
-  transform: rotate(-15deg);
-  /* ajusta el giro si lo quieres más o menos inclinado */
 }
