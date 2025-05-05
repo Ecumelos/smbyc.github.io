@@ -52,7 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (item["Descarga_2_Label"] && item["Descarga_2_URL"]) {
           descargaOptions.push({label: item["Descarga_2_Label"], url: item["Descarga_2_URL"]});
         }
-        tdDescarga.appendChild(createDropdownFromArray(descargaOptions, "Raster (Geo TIFF)"));
+        if (item["Descarga_3_Label"] && item["Descarga_3_URL"]) {
+          descargaOptions.push({
+            label: item["Descarga_3_Label"],
+            url:   item["Descarga_3_URL"]
+          });
+        }
+        tdDescarga.appendChild(createDropdownFromArray(descargaOptions, "Descarga"));
         tr.appendChild(tdDescarga);
 
         // Columna Catálogo con icono
