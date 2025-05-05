@@ -39,11 +39,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Columna Estado
         var tdEstado = document.createElement("td");
-        tdEstado.innerHTML =
-          '<p style="text-align:center; color:#123662;">' +
-            '<span style="white-space:nowrap;">' + (item.Estado || "") + '</span>' +
-          '</p>';
-        tr.appendChild(tdEstado);
+        tdEstado.style.textAlign = "center";
+
+        if (item.Estado === "Oficializada") {
+          // insertar sello
+          var sello = document.createElement("span");
+          sello.className = "stamp";
+          sello.textContent = "Oficializada";
+          tdEstado.appendChild(sello);
+        } else {
+          // texto normal
+          tdEstado.innerHTML =
+            '<p style="text-align:center; color:#123662;">' +
+              '<span style="white-space:nowrap;">' + (item.Estado || "") + '</span>' +
+            '</p>';
+      }
+
+tr.appendChild(tdEstado);
 
         // Columna Geoservicio (hasta 3 opciones)
         var tdGeo = document.createElement("td");

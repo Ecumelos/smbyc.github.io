@@ -31,3 +31,16 @@ button.btn-default:hover {
 .table-responsive {
   margin-bottom: 20px;
 }
+
+/* estilo del sello “Oficializado” */
+.stamp {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 0.9em;
+  white-space: nowrap;
+  transform: rotate(-15deg);
+  /* ajusta el giro si lo quieres más o menos inclinado */
+}
