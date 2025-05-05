@@ -41,21 +41,18 @@ document.addEventListener("DOMContentLoaded", function() {
         var tdEstado = document.createElement("td");
         tdEstado.style.textAlign = "center";
 
-        if (item.Estado === "Oficializada") {
-          // insertar sello
+        if (item.Estado === "Oficializada" || item.Estado === "Oficializado") {
           var sello = document.createElement("span");
           sello.className = "stamp";
-          sello.textContent = "Oficializada";
+          sello.textContent = item.Estado;
           tdEstado.appendChild(sello);
         } else {
-          // texto normal
           tdEstado.innerHTML =
             '<p style="text-align:center; color:#123662;">' +
               '<span style="white-space:nowrap;">' + (item.Estado || "") + '</span>' +
             '</p>';
-      }
-
-tr.appendChild(tdEstado);
+        }
+        tr.appendChild(tdEstado);
 
         // Columna Geoservicio (hasta 3 opciones)
         var tdGeo = document.createElement("td");
@@ -93,8 +90,7 @@ tr.appendChild(tdEstado);
         if (item.Catalogo) {
           tdCatalogo.innerHTML =
             '<a href="' + item.Catalogo + '" target="_blank">' +
-              '<img src="https://cdn-icons-png.freepik.com/256/2326/2326855.png" ' +
-                   'alt="Catálogo" style="width:60%;">' +
+              '<img src="https://cdn-icons-png.freepik.com/256/2326/2326855.png" alt="Catálogo" style="width:60%;">' +
             '</a>';
         } else {
           var spanCat = document.createElement("span");
@@ -111,8 +107,7 @@ tr.appendChild(tdEstado);
         if (item.Metadato) {
           tdMetadato.innerHTML =
             '<a href="' + item.Metadato + '" target="_blank">' +
-              '<img src="https://cdn-icons-png.freepik.com/256/10868/10868143.png" ' +
-                   'alt="Metadato" style="width:60%;">' +
+              '<img src="https://cdn-icons-png.freepik.com/256/10868/10868143.png" alt="Metadato" style="width:60%;">' +
             '</a>';
         } else {
           var spanMeta = document.createElement("span");
@@ -129,8 +124,7 @@ tr.appendChild(tdEstado);
         if (item.SalidaGrafica) {
           tdSalida.innerHTML =
             '<a href="' + item.SalidaGrafica + '" target="_blank">' +
-              '<img src="https://cdn-icons-png.freepik.com/256/5320/5320547.png" ' +
-                   'alt="Salida gráfica" style="width:70%;">' +
+              '<img src="https://cdn-icons-png.freepik.com/256/5320/5320547.png" alt="Salida gráfica" style="width:70%;">' +
             '</a>';
         } else {
           var spanSal = document.createElement("span");
@@ -145,8 +139,11 @@ tr.appendChild(tdEstado);
         tbody.appendChild(tr);
       });
 
-      // Inicializar DataTables para paginación y filtros
+      // Inicializar DataTables para paginación, filtros y traducción al español
       $('#tabla-cobertura-table').DataTable({
+        language: {
+          url: 'https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
+        },
         paging: true,
         searching: true,
         info: true,
@@ -183,9 +180,9 @@ tr.appendChild(tdEstado);
 
     options.forEach(function(option) {
       var li = document.createElement("li");
-      var a  = document.createElement("a");
-      a.href        = option.url;
-      a.target      = "_blank";
+      var a = document.createElement("a");
+      a.href = option.url;
+      a.target = "_blank";
       a.textContent = option.label;
       li.appendChild(a);
       ul.appendChild(li);
@@ -212,16 +209,3 @@ tr.appendChild(tdEstado);
   // Al hacer clic fuera de un dropdown, cerrarlos
   document.addEventListener("click", closeAllDropdowns);
 });
-
-
-<script>
-  $('#tabla-cobertura-table').DataTable({
-    language: {
-      url: 'https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
-    },
-    paging:   true,
-    searching:true,
-    info:     true,
-    order:    []
-  });
-</script>
